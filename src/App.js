@@ -40,7 +40,7 @@ function App() {
             path="/login"
             element={<LoginPage/>}
           />
-          // <Route
+          <Route
             path="/register"
             element={<RegisterPage/>}
           />
