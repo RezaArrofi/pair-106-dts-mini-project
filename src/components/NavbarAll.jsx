@@ -32,7 +32,7 @@ const NavbarAll = () => {
         <Button
           variant="contained"
           sx={{ mt: 3, mb: 2 }}
-          onClick={buttonLogoutHhandler}
+          onClick={buttonLogoutHandler}
         >Logout</Button>
       </Toolbar>
     </AppBar>
