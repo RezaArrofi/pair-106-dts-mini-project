@@ -11,7 +11,7 @@ const NavbarAll = () => {
   
   const buttonLogoutHandler = async() => {
     await logout();
-    navigate("/");
+    navigate("/login");
   };
   return (
     <>
