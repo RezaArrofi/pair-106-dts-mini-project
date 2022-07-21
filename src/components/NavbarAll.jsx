@@ -1,14 +1,16 @@
 import React from "react";
 import { AppBar, Toolbar, Typography, IconButton, Button } from "@mui/material";
 import { Menu } from "@mui/icons-material";
-import { logout } from "../../authentication/firebase";
+import {
+  logout
+} from "../../authentication/firebase";
 import { useNavigate } from "react-router-dom";
 
 const NavbarAll = () => {
   const navigate = useNavigate();
   
   const buttonLogoutHandler = async() => {
-    await Logout();
+    await logout();
     navigate("/");
   };
   return (
