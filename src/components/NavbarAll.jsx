@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, AppBar, Toolbar, Typography, IconButton } from "@mui/material";
+import { AppBar, Toolbar, Typography, IconButton } from "@mui/material";
 import { Menu } from "@mui/icons-material";
 
 const NavbarAll = () => {
