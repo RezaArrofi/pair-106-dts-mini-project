@@ -1,7 +1,5 @@
 import React from "react";
-import ListMovie from "../components/Home/ListMovie";
 import ItemMovie from "../components/Home/ItemMovie";
-import { Typography } from "@mui/material";
 
 
 const Home = ({moviesHome}) => {
