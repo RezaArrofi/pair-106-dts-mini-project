@@ -6,6 +6,7 @@ import Home from './containers/Home';
 import tmdb from './data/tmdbConnection'
 import LoginPage from './containers/LoginPage';
 import RegisterPage from './containers/RegisterPage';
+import ProtectedComponent from "./components/ProtectedComponent";
 
 
 function App() {
@@ -34,7 +35,11 @@ function App() {
         <Routes>
           <Route
               path="/"
-              element={<Home key={movies.keys} moviesHome={movies} />}
+              element={
+                <ProtectedComponent>
+                  <Home key={movies.keys} moviesHome={movies} />
+                </ProtectedComponent>
+              }
           />
           <Route
             path="/login"
