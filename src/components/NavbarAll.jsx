@@ -1,8 +1,16 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, IconButton } from "@mui/material";
+import { AppBar, Toolbar, Typography, IconButton, Button } from "@mui/material";
 import { Menu } from "@mui/icons-material";
+import { Logout } from "../../authentication/firebase";
+import { useNavigate } from "react-router-dom";
 
 const NavbarAll = () => {
+  const navigate = useNavigate();
+  
+  const buttonLogoutHandler = async() => {
+    await Logout();
+    navigate("/");
+  };
   return (
     <>
     <AppBar position="static" sx={{backgroundColor:"red"}}>
@@ -19,6 +27,11 @@ const NavbarAll = () => {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           News
         </Typography>
+        <Button
+          variant="contained"
+          sx={{ mt: 3, mb: 2 }}
+          onClick={buttonLogoutHhandler}
+        >Logout</Button>
       </Toolbar>
     </AppBar>
     </>
