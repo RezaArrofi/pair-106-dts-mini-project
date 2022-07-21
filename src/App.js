@@ -2,9 +2,6 @@ import './App.css';
 import {useState, useEffect} from "react";
 import { Routes, Route } from 'react-router-dom';
 import NavbarAll from './components/NavbarAll';
-// import {Swiper, SwiperSlide} from 'swiper/react';
-// import 'swiper/css/bundle';
-// import { Pagination } from 'swiper';
 import Home from './containers/Home';
 import tmdb from './data/tmdbConnection'
 import LoginPage from './containers/LoginPage';
