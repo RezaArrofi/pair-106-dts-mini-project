@@ -1,24 +1,56 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState, useEffect} from "react";
+import { Routes, Route } from 'react-router-dom';
+import NavbarAll from './components/NavbarAll';
+// import {Swiper, SwiperSlide} from 'swiper/react';
+// import 'swiper/css/bundle';
+// import { Pagination } from 'swiper';
+import Home from './containers/Home';
+import tmdb from './data/tmdbConnection'
+import LoginPage from './containers/LoginPage';
+import RegisterPage from './containers/RegisterPage';
+
 
 function App() {
+
+  const [movies, setMovies] = useState([]);
+
+  useEffect(()=>{
+    const fetchDataMovies = async() =>{
+      try{
+        const response = await tmdb.get(`movie/popular?api_key=d39ba5cb0b045e08662097dab191862b`);
+        console.log(response);
+        setMovies(response.data.results);
+      } catch (err) {
+        console.log(err.response);
+      }
+    }
+    fetchDataMovies();
+  },[]);
   return (
+    <>
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavbarAll />
+      <main className="w-full  min-h-screen pt-2 pb-2 flex justify-center">
+        {/* {console.log(movies.keys, movies.id)} */}
+        <Routes>
+          <Route
+              path="/"
+              element={<Home key={movies.keys} moviesHome={movies} />}
+          />
+          <Route
+            path="/login"
+            element={<LoginPage/>}
+          />
+          // <Route
+            path="/register"
+            element={<RegisterPage/>}
+          />
+        </Routes>
+      </main>
     </div>
+    </>
   );
 }
 
