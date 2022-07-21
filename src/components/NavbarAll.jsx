@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Typography, IconButton, Button } from "@mui/material";
 import { Menu } from "@mui/icons-material";
 import {
   logout
-} from "../../authentication/firebase";
+} from "../authentication/firebase";
 import { useNavigate } from "react-router-dom";
 
 const NavbarAll = () => {
