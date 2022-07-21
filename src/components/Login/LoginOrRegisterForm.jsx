@@ -24,7 +24,7 @@ const LoginOrRegisterForm = ({loginOrRegister}) => {
   
   const navigate = useNavigate();
   
-  const [user, loading, error]=useAuthState(auth);
+  const [user, loading]=useAuthState(auth);
   
   const [credential, setCredential] = useState({
     email: "",
