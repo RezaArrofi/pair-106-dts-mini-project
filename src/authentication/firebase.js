@@ -22,7 +22,8 @@ const auth = getAuth(app);
 
 const register = async(email, password) => {
   try{
-    const userRegister = await createUserWithEmailAndPassword(auth, email, password)
+    const userRegister = await createUserWithEmailAndPassword(auth, email, password);
+    console.log(userRegister);
   } catch(err) {
     console.log(err);
   }
@@ -31,6 +32,7 @@ const register = async(email, password) => {
 const login = async(email, password) => {
   try{
     const userLogin = await signInWithEmailAndPassword(auth, email, password)
+    console.log(userLogin);
   } catch (err) {
     console.log(err);
   }
